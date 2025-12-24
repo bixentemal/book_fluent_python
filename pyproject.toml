@@ -1,6 +1,35 @@
 [project]
-name = "book-fluent-python"
+name = "fluent-python-exercises"
 version = "0.1.0"
-description = "Add your description here"
-requires-python = ">=3.14"
+description = "Study notes and exercises for Fluent Python (2nd Edition) by Luciano Ramalho"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Vincent"}
+]
+keywords = ["python", "learning", "fluent-python", "exercises"]
+
 dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+async = [
+    "httpx>=0.25.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]  # Line too long (handled by formatter)
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_ignores = true
